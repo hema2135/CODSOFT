@@ -1,0 +1,50 @@
+# This function adds two numbers
+def add(x, y):
+    return x + y
+
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
+
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
+
+# This function divides two numbers
+def divide(x, y):
+    return x / y
+
+print("Select the operation:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+while True:
+    # Take input from the user
+    choice = input("Enter choice: ")
+
+    # Check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        try:
+            n1 = float(input("Enter first number: "))
+            n2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(n1, "+", n2, "=", add(n1, n2))
+        elif choice == '2':
+            print(n1, "-", n2, "=", subtract(n1, n2))
+        elif choice == '3':
+            print(n1, "*", n2, "=", multiply(n1, n2))
+        elif choice == '4':
+            print(n1, "/", n2, "=", divide(n1, n2))
+
+        # Check if the user wants another calculation
+        next_calculation = input("move to  the next calculation? (yes/no): ")
+        if next_calculation.lower() == "no":
+            break
+    else:
+        print("Invalid Input")
